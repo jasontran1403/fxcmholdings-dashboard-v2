@@ -8,9 +8,6 @@ import { useState, useEffect } from "react";
 const url = "https://seashell-app-bbv6o.ondigitalocean.app";
 // const url = "http://localhost:8080";
 
-// componets
-
-
 const Dashboard = () => {
 	const storedUserData = localStorage?.getItem("_FXCM_AUTH");
 	const parsedUserData = storedUserData ? JSON.parse(storedUserData) : null;

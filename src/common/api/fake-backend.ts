@@ -128,7 +128,7 @@ export default function configureFakeBackend() {
 							responseJson = { message: 'Tên đăng nhập đã tồn tại' };
 							return resolve([201, { data: responseJson }]);
 						  } else if (result === "This email address already existed") {
-							responseJson = { message: 'Tên đăng nhập đã tồn tại' };
+							responseJson = { message: 'Địa chỉ email đã tồn tại' };
 							return resolve([202, { data: responseJson }]);
 						  } else if (result === "This sponsor is not existed") {
 							responseJson = { message: 'Người giới thiệu không tồn tại' };
