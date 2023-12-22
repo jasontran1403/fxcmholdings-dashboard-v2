@@ -6,6 +6,8 @@
   <link rel="/favicon.ico" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FXCM Holdings</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css" rel="stylesheet"
+    type="text/css" />
   <style>
     #splash-screen {
       position: fixed;
@@ -34,6 +36,103 @@
         opacity: 0;
         visibility: hidden;
       }
+    }
+
+    .tree-nav__item {
+      display: block;
+      white-space: nowrap;
+      color: gray;
+      position: relative;
+    }
+
+    .tree-nav__item .tree-nav__item {
+      margin-left: 2.4rem;
+    }
+
+    .tree-nav__item.is-expandable[open]>.tree-nav__item-title::before {
+      font-family: "ionicons";
+      transform: rotate(90deg);
+    }
+
+    .tree-nav__item.is-expandable>.tree-nav__item-title {
+      padding-left: 2.4rem;
+    }
+
+    .tree-nav__item.is-expandable>.tree-nav__item-title::before {
+      position: absolute;
+      will-change: transform;
+      transition: transform 300ms ease;
+      font-family: "ionicons";
+      color: black;
+      font-size: 1.1rem;
+      content: "\f125";
+      left: 15px;
+      display: inline-block;
+      text-align: center;
+      padding-left: 0.4rem;
+    }
+
+    .tree-nav__item-title {
+      cursor: pointer;
+      display: block;
+      outline: 0;
+      color: whitesmoke;
+      font-size: 1.5rem;
+      line-height: 3.2rem;
+      background-color: #009bdf;
+      margin-bottom: 18px;
+      border: 1px solid #000;
+      border-radius: 6px;
+      padding-left: 20px;
+      overflow: scroll;
+      /* Use auto to show scrollbar only when necessary */
+      scrollbar-width: thin;
+      /* Firefox */
+      scrollbar-color: transparent transparent;
+    }
+
+    /* Webkit (Chrome, Safari) */
+    .tree-nav__item-title::-webkit-scrollbar {
+      width: 6px;
+      /* Set a small width for the scrollbar */
+    }
+
+    .tree-nav__item-title::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      /* Set the thumb color to transparent */
+    }
+
+    .tree-nav__item-title::-webkit-scrollbar-track {
+      background-color: transparent;
+      /* Set the track color to transparent */
+    }
+
+    .tree-nav__item-title:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    .tree-nav__item-title .icon {
+      display: inline;
+      padding-left: 1.6rem;
+      margin-right: 0.4rem;
+      margin-left: 0.4rem;
+      color: #666;
+      font-size: 1.4rem;
+      position: relative;
+    }
+
+    .tree-nav__item-title .icon::before {
+      top: 0;
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      width: 1.6rem;
+      text-align: center;
+    }
+
+    .tree-nav__item-title::-webkit-details-marker {
+      display: none;
     }
   </style>
 </head>

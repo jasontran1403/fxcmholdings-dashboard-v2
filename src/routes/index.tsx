@@ -617,6 +617,21 @@ const investmentRoutes: RoutesProps = {
 	],
 }
 
+const treeviewRoutes: RoutesProps = {
+	path: '/admin',
+	name: 'Treeview',
+	icon: 'pages',
+	header: 'Navigation',
+	children: [
+		{
+			path: '/treeview',
+			name: 'Data Tables',
+			element: <StarterPages />,
+			route: PrivateRoute,
+		},
+	],
+}
+
 const transactionRoutes: RoutesProps = {
 	path: '/admin',
 	name: 'Transaction',
@@ -696,7 +711,8 @@ const flattenRoutes = (routes: RoutesProps[]) => {
 }
 
 // All routes
-const authProtectedRoutes = [dashboardRoutes, customPagesRoutes, uiRoutes, investmentRoutes, transactionRoutes, walletRoutes, userManageRoutes]
+const authProtectedRoutes = [dashboardRoutes, customPagesRoutes, uiRoutes, investmentRoutes, transactionRoutes, walletRoutes,
+	 userManageRoutes, treeviewRoutes]
 const publicRoutes = [...authRoutes, ...otherPublicRoutes]
 
 const authProtectedFlattenRoutes = flattenRoutes([...authProtectedRoutes])

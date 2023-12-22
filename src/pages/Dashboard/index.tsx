@@ -35,6 +35,7 @@ const Dashboard = () => {
 			});
 		}, 500);
 	}, []);
+	
 	return (
 		<>
 			<Row>

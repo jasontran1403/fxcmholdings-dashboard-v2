@@ -580,6 +580,12 @@ const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
 				url: '/transaction',
 				parentKey: 'dashboard',
 			},
+			{
+				key: 'treeview',
+				label: 'Treeview',
+				url: '/treeview',
+				parentKey: 'dashboard',
+			},
 		],
 	},
 	{

@@ -1,6 +1,5 @@
 import { authApi } from '@/common/api'
 import { useAuthContext } from '@/common/context'
-import { AxiosResponse } from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -28,22 +27,21 @@ export default function useRegister() {
 	}) => {
 		setLoading(true)
 		try {
-			const result: AxiosResponse<any, any> = await authApi.register({
+			const result = await authApi.register({
 				fullname,
 				username,
 				email,
 				password: password1,
 				rootUsername,
-			  });
-			  
-			  console.log(result.data.message);
-			  
-			  if (result.data.message === "Đăng ký thành công") {
+			});
+
+			const message = result.data?.message;
+
+			if (message === "Đăng ký thành công") {
 				navigate('/auth/login');
-			  } else {
-				setError(result.data.message);
-			  }
-			  
+			} else {
+				setError(message);
+			}
 		} finally {
 			setLoading(false)
 		}
