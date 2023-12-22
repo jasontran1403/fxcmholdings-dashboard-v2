@@ -8,8 +8,8 @@ import { CustomCardPortlet } from '@/components'
 // data
 import { projects } from './data'
 
-// const url = "https://seashell-app-bbv6o.ondigitalocean.app";
-const url = "http://localhost:8080";
+const url = "https://seashell-app-bbv6o.ondigitalocean.app";
+// const url = "http://localhost:8080";
 
 const Projects = () => {
 	const storedUserData = localStorage?.getItem("_FXCM_AUTH");

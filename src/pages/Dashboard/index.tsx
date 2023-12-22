@@ -7,8 +7,8 @@ import Projects from './Projects'
 import Axios from "axios";
 import { useState, useEffect } from "react";
 
-// const url = "https://seashell-app-bbv6o.ondigitalocean.app";
-const url = "http://localhost:8080";
+const url = "https://seashell-app-bbv6o.ondigitalocean.app";
+// const url = "http://localhost:8080";
 
 // componets
 import { PageBreadcrumb } from '@/components'

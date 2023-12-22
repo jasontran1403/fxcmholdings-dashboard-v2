@@ -11,8 +11,8 @@ import { Employee } from './types'
 // components
 import { PageSize, Table } from '@/components'
 
-// const url = "https://seashell-app-bbv6o.ondigitalocean.app";
-const url = "http://localhost:8080";
+const url = "https://seashell-app-bbv6o.ondigitalocean.app";
+// const url = "http://localhost:8080";
 
 const columns: ReadonlyArray<Column> = [
 	{
