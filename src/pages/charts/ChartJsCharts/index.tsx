@@ -15,7 +15,7 @@ import {
 } from './data'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 
 const ChartjsCharts = () => {
 	useEffect(() => {

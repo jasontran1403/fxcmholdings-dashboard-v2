@@ -2,7 +2,7 @@ import { Card, Col, Row, Badge, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 
 // constants
 import { colorVariants, extendedColorVariants } from '@/constants/colorVariants'

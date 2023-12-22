@@ -8,7 +8,7 @@ import {
 } from 'react-bootstrap'
 
 // component
-import { PageBreadcrumb } from '@/components'
+
 
 // images
 import Img1 from '@/assets/images/small/small-1.jpg'

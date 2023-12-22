@@ -3,7 +3,7 @@ import { Card, Col, Collapse, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 import { extendedColorVariants } from '@/constants/colorVariants'
 
 interface PortletProps {

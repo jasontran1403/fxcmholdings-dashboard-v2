@@ -3,7 +3,7 @@ import { Button, Card, Col, Form, ProgressBar, Row } from 'react-bootstrap'
 import { Wizard, Steps, Step } from 'react-albus'
 
 // component
-import { PageBreadcrumb } from '@/components'
+
 
 const BasicWizard = () => {
 	return (

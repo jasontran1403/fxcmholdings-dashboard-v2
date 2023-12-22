@@ -2,7 +2,7 @@ import { Card, Col, Image, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 // component
-import { PageBreadcrumb } from '@/components'
+
 
 // images
 import avatar1 from '@/assets/images/users/avatar-1.jpg'

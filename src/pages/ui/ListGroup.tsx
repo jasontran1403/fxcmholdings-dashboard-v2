@@ -7,7 +7,7 @@ import {
 } from 'react-bootstrap'
 
 // component
-import { PageBreadcrumb } from '@/components'
+
 
 const Basic = () => {
 	return (

@@ -1,7 +1,7 @@
 import { Row, Col, Card, ProgressBar } from 'react-bootstrap'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 
 const Example = () => {
 	return (

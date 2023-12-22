@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Button, Card, Col, Form, InputGroup, Row } from 'react-bootstrap'
 
 // component
-import { PageBreadcrumb } from '@/components'
+
 
 const CustomStyles = () => {
 	const [validated, setValidated] = useState(false)

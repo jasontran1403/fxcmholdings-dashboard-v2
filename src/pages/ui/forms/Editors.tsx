@@ -2,7 +2,7 @@ import { Card, Col, Row } from 'react-bootstrap'
 import ReactQuill from 'react-quill'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 
 // styles
 import 'react-quill/dist/quill.snow.css'

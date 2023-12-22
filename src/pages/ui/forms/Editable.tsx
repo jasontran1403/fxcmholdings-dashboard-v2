@@ -2,7 +2,7 @@ import { Card, Col, Row } from 'react-bootstrap'
 import EasyEdit, { Types } from 'react-easy-edit'
 
 // Component
-import { PageBreadcrumb } from '@/components'
+
 
 const XEditable = () => {
 	const save = (value: string) => {}

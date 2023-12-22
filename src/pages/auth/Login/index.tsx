@@ -10,7 +10,7 @@ import {
 } from 'react-bootstrap'
 
 // components
-import { VerticalForm, FormInput, PageBreadcrumb } from '@/components'
+import { VerticalForm, FormInput } from '@/components'
 
 interface UserData {
 	email: string

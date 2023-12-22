@@ -8,7 +8,7 @@ import {
 } from 'react-sparklines'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 
 const SparklinesCharts = () => {
 	return (

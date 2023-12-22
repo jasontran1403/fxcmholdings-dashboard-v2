@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import qs from 'qs';
 
 //dummy data
-import { employeeRecords, expandableRecords } from './data'
+import { employeeRecords } from './data'
 import { Column } from 'react-table'
 import { Employee } from './types'
 
@@ -80,7 +80,7 @@ const timeArray : Time[] = [
 
 const FloatingLabels = () => {
 	const [packs, setPacks] = useState<Package[] | null>([]);
-	const [times, setTimes] = useState<Time[] | null>(timeArray);
+	const [times] = useState<Time[] | null>(timeArray);
 	const storedUserData = localStorage?.getItem("_FXCM_AUTH");
 	const parsedUserData = storedUserData ? JSON.parse(storedUserData) : null;
 	const [username] = useState(parsedUserData?.email || '');
@@ -88,12 +88,13 @@ const FloatingLabels = () => {
 	const [daily, setDaily] = useState<number | 0>(0);
 	const [timeChoose, setTimeChoose] = useState<string | null>(null);
 	const [packChoose, setPackChoose] = useState<number | null>(null);
-	const [error, setError] = useState<string | null>(null);
 
 	const handlePackageChange = (packageId: number) => {
 		setPackChoose(packageId || 0);
-		setPrice(packs[packageId-1].price);
-		setDaily(packs[packageId-1].daily);
+		if (packs !== null) {
+			setPrice(packs[packageId - 1]?.price || 0);
+			setDaily(packs[packageId - 1]?.daily || 0);
+		  }
 	};
 
 	const handleTimeChange = (time: string) => {
@@ -118,7 +119,7 @@ const FloatingLabels = () => {
 		}
 		console.log(timeChoose);
 
-		const timeConvert = times ? (times as { name: string }[])[timeChoose-1]?.name : '';
+		const timeConvert = times ? (times as { name: string }[])[parseInt(timeChoose) - 1]?.name : '';
 
 		let data = qs.stringify({
 			packid: packChoose,

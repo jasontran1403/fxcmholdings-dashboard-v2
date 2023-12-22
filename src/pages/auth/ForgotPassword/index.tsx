@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import useRecoverPassword from './useRecoverPassword'
 
 // components
-import { FormInput, VerticalForm, PageBreadcrumb } from '@/components'
+import { FormInput, VerticalForm } from '@/components'
 
 const BottomLink = () => {
 	return (

@@ -4,9 +4,6 @@ import { Card, Col, Row } from 'react-bootstrap'
 // data
 import { remixIconsList } from './data'
 
-// component
-import PageBreadcrumb from '@/components/PageBreadcrumb'
-
 const RemixIcons = () => {
 	let headings: any[] = []
 	headings.push(Object.keys(remixIconsList[0]))

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 // components
 import AuthLayout from '../AuthLayout'
-import { VerticalForm, FormInput, PageBreadcrumb } from '@/components'
+import { VerticalForm, FormInput } from '@/components'
 
 // images
 import avatar1 from '@/assets/images/users/avatar-1.jpg'

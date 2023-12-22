@@ -2,7 +2,7 @@ import { Card, Col, Row } from 'react-bootstrap'
 
 // components
 import { FileUploader } from '@/components/FileUploader'
-import { PageBreadcrumb } from '@/components'
+
 
 const FileUploads = () => {
 	return (

@@ -8,7 +8,7 @@ import img2 from '@/assets/images/small/small-2.jpg'
 import img3 from '@/assets/images/small/small-3.jpg'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 
 interface TimelineData {
 	[key: string]: {

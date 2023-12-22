@@ -1,7 +1,7 @@
 import { Card, Col, Row } from 'react-bootstrap'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 
 const Pricing = () => {
 	return (

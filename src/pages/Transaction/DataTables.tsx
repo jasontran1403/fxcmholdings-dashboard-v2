@@ -1,10 +1,9 @@
-import { Card, Col, Row, FloatingLabel, Form, Button } from 'react-bootstrap'
+import { Card, Col, Row } from 'react-bootstrap'
 import Axios from "axios";
 import { useState, useEffect } from "react";
-import qs from 'qs';
 
 //dummy data
-import { employeeRecords, expandableRecords } from './data'
+import { employeeRecords } from './data'
 import { Column } from 'react-table'
 import { Employee } from './types'
 

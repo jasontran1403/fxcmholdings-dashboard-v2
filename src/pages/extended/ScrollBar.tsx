@@ -2,7 +2,7 @@ import { Card, Col, Row } from 'react-bootstrap'
 import SimpleBar from 'simplebar-react'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 
 const ScrollBar = () => {
 	return (

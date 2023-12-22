@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom'
 import { splitArray } from '@/utils'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 
 // data
 import { contactList } from './data'

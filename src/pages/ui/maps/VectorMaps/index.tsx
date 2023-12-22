@@ -21,7 +21,7 @@ import {
 	UsaVectorMap,
 	WorldMap,
 } from '@/components'
-import { PageBreadcrumb } from '@/components'
+
 
 const VectorMaps = () => {
 	return (

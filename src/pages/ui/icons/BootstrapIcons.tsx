@@ -4,7 +4,7 @@ import { Card, Col, Row } from 'react-bootstrap'
 import { bootstrapIconsList } from './data'
 
 // component
-import { PageBreadcrumb } from '@/components'
+
 
 const BootstrapIcons = () => {
 	return (

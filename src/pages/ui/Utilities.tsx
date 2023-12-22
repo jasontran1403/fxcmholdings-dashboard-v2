@@ -9,7 +9,7 @@ import avatar2 from '@/assets/images/users/avatar-2.jpg'
 import avatar4 from '@/assets/images/users/avatar-4.jpg'
 
 // component
-import { PageBreadcrumb } from '@/components'
+
 
 interface DefaultVariant {
 	variant: string

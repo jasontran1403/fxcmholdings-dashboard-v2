@@ -28,7 +28,7 @@ import {
 } from './data'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 
 const ApexCharts = () => {
 	return (

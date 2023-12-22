@@ -1,53 +1,10 @@
-import { Card, Col, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import { ApexOptions } from 'apexcharts'
 import ReactApexChart from 'react-apexcharts'
 
 // components
 import { CustomCardPortlet } from '@/components'
 
-const UsChart = () => {
-	const usChartOpts: ApexOptions = {
-		series: [44, 55, 13, 43],
-
-		chart: {
-			width: 80,
-			type: 'pie',
-		},
-		dataLabels: {
-			enabled: false,
-		},
-		legend: {
-			show: false,
-		},
-		colors: ['#1a2942', '#f13c6e', '#3bc0c3', '#d1d7d973'],
-		labels: ['Team A', 'Team B', 'Team C', 'Team D'],
-	}
-	return (
-		<Card>
-			<Card.Body>
-				<div className="d-flex align-items-center">
-					<div className="flex-grow-1 overflow-hidden">
-						<h4 className="fs-22 fw-semibold">69.25%</h4>
-						<p className="text-uppercase fw-medium text-muted text-truncate mb-0">
-							{' '}
-							US Dollar Share
-						</p>
-					</div>
-					<div className="flex-shrink-0" dir="ltr">
-						<ReactApexChart
-							height={90}
-							width={80}
-							options={usChartOpts}
-							series={usChartOpts.series}
-							type="pie"
-							className="apex-charts"
-						/>
-					</div>
-				</div>
-			</Card.Body>
-		</Card>
-	)
-}
 const YearlySelesChart = () => {
 	const yearlyChartOpts: ApexOptions = {
 		series: [

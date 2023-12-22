@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import useRegister from './useRegister'
 
 // Components
-import { VerticalForm, FormInput, PageBreadcrumb } from '@/components'
+import { VerticalForm, FormInput } from '@/components'
 
 interface UserData {
 	fullname: string

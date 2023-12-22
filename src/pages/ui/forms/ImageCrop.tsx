@@ -2,7 +2,7 @@ import { Button, Card, Col, Image, Row } from 'react-bootstrap'
 import Cropper, { ReactCropperElement } from 'react-cropper'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 
 // styles
 import 'cropperjs/dist/cropper.css'

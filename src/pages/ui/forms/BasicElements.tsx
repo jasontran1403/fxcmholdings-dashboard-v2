@@ -12,7 +12,7 @@ import {
 import { useForm } from 'react-hook-form'
 
 // component
-import { FormInput, PageBreadcrumb } from '@/components'
+import { FormInput } from '@/components'
 
 // constants
 import { colorVariants } from '@/constants/colorVariants'

@@ -7,7 +7,7 @@ import { Employee } from './types'
 
 // components
 import { PageSize, Table } from '@/components'
-import { PageBreadcrumb } from '@/components'
+
 
 const columns: ReadonlyArray<Column> = [
 	{

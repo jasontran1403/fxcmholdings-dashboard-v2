@@ -8,7 +8,7 @@ import AuthLayout from './AuthLayout'
 import shield from '@/assets/images/svg/shield.gif'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 
 const Logout = () => {
 	const { removeSession } = useAuthContext()

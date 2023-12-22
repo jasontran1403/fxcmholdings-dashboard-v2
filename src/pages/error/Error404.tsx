@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Col, Container, Image, Row } from 'react-bootstrap'
 // components
-import { PageBreadcrumb } from '@/components'
+
 import { useEffect } from 'react'
 
 //images

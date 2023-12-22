@@ -3,7 +3,7 @@ import Axios from "axios";
 import { useState, useEffect } from "react";
 
 //dummy data
-import { employeeRecords, expandableRecords } from './data'
+import { employeeRecords } from './data'
 import { Column } from 'react-table'
 import { Employee } from './types'
 

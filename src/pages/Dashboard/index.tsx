@@ -1,8 +1,6 @@
 import { Col, Row } from 'react-bootstrap'
 import Statistics from './Statistics'
 import WeeklySelesChart from './WeeklySelesChart'
-import YearlySelesChart from './YearlySelesChart'
-import ChatList from './ChatList'
 import Projects from './Projects'
 import Axios from "axios";
 import { useState, useEffect } from "react";
@@ -11,10 +9,7 @@ const url = "https://seashell-app-bbv6o.ondigitalocean.app";
 // const url = "http://localhost:8080";
 
 // componets
-import { PageBreadcrumb } from '@/components'
 
-// data
-import { chatMessages, statistics } from './data'
 
 const Dashboard = () => {
 	const storedUserData = localStorage?.getItem("_FXCM_AUTH");
@@ -23,8 +18,8 @@ const Dashboard = () => {
 	const [cashBalance, setCashBalance] = useState("");
 	const [commissionBalance, setCommissionBalance] = useState("");
 	const [personalSale, setPersonalSale] = useState(0);
-	const [investments, setInvestments] = useState([]);
-	const [expenses, setExpenses] = useState({});
+	// const [investments, setInvestments] = useState([]);
+	// const [expenses, setExpenses] = useState({});
 
 	useEffect(() => {
 		setTimeout(() => {

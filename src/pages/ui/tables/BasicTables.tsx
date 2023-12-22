@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { records, expandablerecords, nestedrecords } from './data'
 
 // Components
-import { PageBreadcrumb } from '@/components'
+
 
 const BasicTable = () => {
 	return (

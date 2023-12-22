@@ -2,7 +2,7 @@ import { Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 
 const Error404Alt = () => {
 	return (

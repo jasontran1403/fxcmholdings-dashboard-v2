@@ -2,7 +2,7 @@ import { Card, CardGroup, Col, ListGroup, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 // component
-import { PageBreadcrumb } from '@/components'
+
 
 // constants
 import { colorVariants, extendedColorVariants } from '@/constants/colorVariants'

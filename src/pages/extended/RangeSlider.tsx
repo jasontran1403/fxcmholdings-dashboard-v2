@@ -6,7 +6,7 @@ import { useRangeSlider } from '@/hooks'
 import 'nouislider/distribute/nouislider.css'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 
 const RangeSlider = () => {
 	const { selectedVals, selectedRanges, onSlide, onSlide2 } = useRangeSlider()

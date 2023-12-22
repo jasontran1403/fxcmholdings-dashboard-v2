@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Card, Col, Container, Image, Row } from 'react-bootstrap'
 
 // components
-import { PageBreadcrumb } from '@/components'
+
 
 //images
 import authImg from '@/assets/images/auth-img.jpg'
