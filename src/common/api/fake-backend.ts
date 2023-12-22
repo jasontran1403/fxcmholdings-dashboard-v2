@@ -119,15 +119,25 @@ export default function configureFakeBackend() {
 						return response.text();
 					})
 					.then(result => {
+						let responseJson = {};
+						
 						if (result === "success") {
-							return resolve([200, { message: 'Đăng ký thành công' }])
-						} else if (result === "This username already existed") {
-							return resolve([201, { message: 'Tên đăng nhập đã tồn tại' }])
-						} else if (result === "This email address already existed") {
-							return resolve([202, { message: 'Tên đăng nhập đã tồn tại' }])
-						} else if (result === "This sponsor is not existed") {
-							return resolve([203, { message: 'Người giới thiệu không tồn tại' }])
-						}
+							responseJson = { message: 'Đăng ký thành công' };
+							return resolve([200, { data: responseJson }]);  // Include 'data' property
+						  } else if (result === "This username already existed") {
+							responseJson = { message: 'Tên đăng nhập đã tồn tại' };
+							return resolve([201, { data: responseJson }]);
+						  } else if (result === "This email address already existed") {
+							responseJson = { message: 'Tên đăng nhập đã tồn tại' };
+							return resolve([202, { data: responseJson }]);
+						  } else if (result === "This sponsor is not existed") {
+							responseJson = { message: 'Người giới thiệu không tồn tại' };
+							return resolve([203, { data: responseJson }]);
+						  } else {
+							// Handle other cases or errors here
+							responseJson = { message: 'Internal Server Error' };
+							return resolve([500, { data: responseJson }]);
+						  }
 					})
 					.catch(error => {
 						console.error(error);
