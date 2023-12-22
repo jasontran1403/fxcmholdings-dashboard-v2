@@ -12,7 +12,7 @@ type User = {
 	address: string
 	phoneNumber: string
 	rootUsername: string
-	faCode: string
+	facode: string
 }
 
 const url = "https://seashell-app-bbv6o.ondigitalocean.app";
@@ -44,13 +44,14 @@ export default function configureFakeBackend() {
 		return new Promise(function (resolve, reject) {
 			setTimeout(function () {
 				const user = JSON.parse(config["data"]);
+				console.log(user.facode);
 				const requestOptions = {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify({
 						username: user.email,
 						password: user.password,
-						faCode: user.faCode || "",
+						faCode: user.facode || "",
 					}),
 				};
 

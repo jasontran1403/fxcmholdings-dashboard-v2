@@ -19,10 +19,10 @@ export default function useLogin() {
 		[location.state]
 	)
 
-	const login = async ({ email, password }: User) => {
+	const login = async ({ email, password, facode }: User) => {
 		setLoading(true)
 		try {
-			const res: any = await authApi.login({ email, password })
+			const res: any = await authApi.login({ email, password, facode })
 			if (res.token) {
 				saveSession({ ...(res.user ?? {}), email, token: res.token });
 				navigate(redirectUrl)

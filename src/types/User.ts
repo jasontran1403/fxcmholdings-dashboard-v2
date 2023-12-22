@@ -7,4 +7,5 @@ export type User = {
 	lastName?: string
 	role?: string
 	token?: string
+	facode?: string
 }
