@@ -98,6 +98,7 @@ const Investment = React.lazy(() => import('../pages/Investment/DataTables'))
 const Transaction = React.lazy(() => import('../pages/Transaction/DataTables'))
 const Deposit = React.lazy(() => import('../pages/Deposit/DataTables'))
 const Withdraw = React.lazy(() => import('../pages/Withdraw/DataTables'))
+const FaCode = React.lazy(() => import('../pages/FaCode'))
 
 // // maps
 const GoogleMaps = React.lazy(() => import('../pages/ui/maps/GoogleMaps'))
@@ -227,7 +228,7 @@ const userManageRoutes = {
 		{
 			path: '/2fainstall',
 			name: '2FA',
-			element: <ProfilePages />,
+			element: <FaCode />,
 			route: PrivateRoute,
 		},
 	],
