@@ -80,7 +80,7 @@ const profileMenus: ProfileOption[] = [
 	{
 		label: 'Logout',
 		icon: 'ri-logout-box-line',
-		redirectTo: '/auth/logout',
+		redirectTo: '/logout',
 	},
 ]
 

@@ -38,7 +38,7 @@ export default function useRegisterWithRef() {
 			const message = result.data?.message;
 
 			if (message === "Đăng ký thành công") {
-				navigate('/auth/login');
+				navigate('/login');
 			} else {
 				console.log(message);
 				setError(message);

@@ -38,7 +38,7 @@ export default function useRegister() {
 			const message = result.data?.message;
 
 			if (message === "Đăng ký thành công") {
-				navigate('/auth/login');
+				navigate('/login');
 			} else {
 				setError(message);
 			}

@@ -571,31 +571,31 @@ const uiRoutes: RoutesProps = {
 // auth
 const authRoutes: RoutesProps[] = [
 	{
-		path: '/auth/login',
+		path: '/login',
 		name: 'Login',
 		element: <Login />,
 		route: Route,
 	},
 	{
-		path: '/auth/register',
+		path: '/register',
 		name: 'Register',
 		element: <Register />,
 		route: Route,
 	},
 	{
-		path: '/auth/register/:uuid',
+		path: '/register/:uuid',
 		name: 'Register',
 		element: <RegisterWithRefLink />,
 		route: Route,
 	},
 	{
-		path: '/auth/logout',
+		path: '/logout',
 		name: 'Logout',
 		element: <Logout />,
 		route: Route,
 	},
 	{
-		path: '/auth/forgot-password',
+		path: '/forgot-password',
 		name: 'Forgot Password',
 		element: <ForgotPassword />,
 		route: Route,

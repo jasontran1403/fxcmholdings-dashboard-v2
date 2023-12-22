@@ -25,7 +25,7 @@ const BottomLinks = () => {
 				<p className="text-dark-emphasis">
 					Chưa có tài khoản tại FXCM Holdings?{' '}
 					<Link
-						to="/auth/register"
+						to="/register"
 						className="text-dark fw-bold ms-1 link-offset-3 text-decoration-underline"
 					>
 						<b>Đăng ký</b>
@@ -79,7 +79,7 @@ const Login = () => {
 						containerClass="mb-3"
 					>
 
-						<Link to="/auth/forgot-password" className="text-muted float-end">
+						<Link to="/forgot-password" className="text-muted float-end">
 							<small>Quên mật khẩu?</small>
 						</Link>
 					</FormInput>
