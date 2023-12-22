@@ -33,7 +33,7 @@ const FaCode = () => {
 	const storedUserData = localStorage?.getItem("_FXCM_AUTH");
 	const parsedUserData = storedUserData ? JSON.parse(storedUserData) : null;
 	const [username] = useState(parsedUserData?.email || '');
-	const [token] = useState(parsedUserData?.token || '');
+	// const [token] = useState(parsedUserData?.token || '');
 	const [secretPhrase, setSecretPhrase] = useState("");
 	const [qrImg, setQrImg] = useState("");
 	const [authenCode, setAuthenCode] = useState("");
