@@ -35,7 +35,7 @@ const users: User[] = [
 		address: '',
 		phoneNumber: '',
 		rootUsername: '',
-		faCode: '',
+		facode: '',
 	},
 ]
 

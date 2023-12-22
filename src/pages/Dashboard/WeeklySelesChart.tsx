@@ -10,25 +10,30 @@ const url = "https://seashell-app-bbv6o.ondigitalocean.app";
 // components
 import { CustomCardPortlet } from '@/components'
 
+interface ChartData {
+	amount: number;
+	time: string;
+}
+
 const WeeklySelesChart = () => {
 	const storedUserData = localStorage?.getItem("_FXCM_AUTH");
 	const parsedUserData = storedUserData ? JSON.parse(storedUserData) : null;
 	const [username] = useState(parsedUserData?.email || '');
-	const [data, setData] = useState([]);
+	const [data, setData] = useState<ChartData[]>([]);
 
 	useEffect(() => {
 		const fetchData = async () => {
-		  try {
-			const response = await Axios.get(`${url}/api/user/stat/${username}`);
-			setData(response.data);
-		  } catch (error) {
-			console.error('Error fetching data:', error);
-		  }
+			try {
+				const response = await Axios.get(`${url}/api/user/stat/${username}`);
+				setData(response.data);
+			} catch (error) {
+				console.error('Error fetching data:', error);
+			}
 		};
-	
+
 		fetchData();
-	  }, [username]);
-	
+	}, [username]);
+
 
 	const weeklyChartOpts: ApexOptions = {
 		series: [

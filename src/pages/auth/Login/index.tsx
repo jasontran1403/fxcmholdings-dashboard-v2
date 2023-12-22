@@ -15,7 +15,7 @@ import { VerticalForm, FormInput } from '@/components'
 interface UserData {
 	email: string
 	password: string
-	facode: string
+	facode: string | undefined
 }
 
 const BottomLinks = () => {
@@ -43,6 +43,7 @@ const schemaResolver = yupResolver(
 		facode: yup.string(),
 	})
 )
+
 const Login = () => {
 	const { loading, login, redirectUrl, isAuthenticated, error } = useLogin()
 	return (
@@ -58,7 +59,7 @@ const Login = () => {
 				<VerticalForm<UserData>
 					onSubmit={login}
 					resolver={schemaResolver}
-					defaultValues={{ email: '', password: '' }}
+					defaultValues={{ email: '', password: '', facode: '' }}
 				>
 					<FormInput
 						label="Username"
@@ -77,20 +78,20 @@ const Login = () => {
 						placeholder="Mật khẩu của bạn"
 						containerClass="mb-3"
 					>
-						
+
 						<Link to="/auth/forgot-password" className="text-muted float-end">
 							<small>Quên mật khẩu?</small>
 						</Link>
 					</FormInput>
 					<FormInput
-							label="Mã bảo mật 2FA"
-							name="facode"
-							type="text"
-							required
-							id="facode"
-							placeholder="Mã bảo mật 2FA"
-							containerClass="mb-3"
-						></FormInput>
+						label="Mã bảo mật 2FA"
+						name="facode"
+						type="text"
+						required
+						id="facode"
+						placeholder="Mã bảo mật 2FA"
+						containerClass="mb-3"
+					></FormInput>
 					{error !== null && (
 						<div className="mb-0 text-start fs-italic">
 							<span className="fw-bold" style={{ fontStyle: "italic", color: "red" }}>
