@@ -196,16 +196,16 @@ const FloatingLabels = () => {
 							label="Giá gói"
 							className="mb-3"
 						>
-							<Form.Control type="text" value={price} readOnly={true} />
+							<Form.Control type="text" value={`${price}$`} readOnly={true} />
 						</FloatingLabel>
 					</Col>
 					<Col lg={12} className="mb-2">
 						<FloatingLabel
 							controlId="floatingInput"
-							label="Lãi hàng tháng"
+							label="Lãi hàng ngày"
 							className="mb-3"
 						>
-							<Form.Control type="text" value={daily} readOnly={true} />
+							<Form.Control type="text" value={`${daily}%`} readOnly={true} />
 						</FloatingLabel>
 					</Col>
 					<Col lg={12} className="mb-2 text-center">

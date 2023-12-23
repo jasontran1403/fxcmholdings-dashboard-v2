@@ -48,7 +48,7 @@ const Dashboard = () => {
 				<Col xxl={4} sm={6} className="mt-2">
 					<Statistics
 						title={"Commission Balance"}
-						stats={`$${commissionBalance}`}
+						stats={`$${parseFloat(commissionBalance).toFixed(2)}`}
 						change={"0%"}
 						icon={"ri-shopping-basket-line"}
 						variant={"text-bg-info"}
