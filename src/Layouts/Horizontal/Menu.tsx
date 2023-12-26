@@ -5,6 +5,7 @@ import React, {
 	useRef,
 	useState,
 } from 'react'
+import Axios from "axios";
 import { Link, useLocation } from 'react-router-dom'
 
 // constants
@@ -21,7 +22,11 @@ interface MenuItemsProps {
 	subMenuClassNames?: string
 	activeMenuItems?: string[]
 	toggleMenu?: (item: any, status: boolean) => void
+	onClick?: () => void
 }
+
+const url = "https://seashell-app-bbv6o.ondigitalocean.app";
+// const url = "http://localhost:8080";
 
 const MenuItemWithChildren = ({
 	item,
@@ -31,6 +36,7 @@ const MenuItemWithChildren = ({
 	subMenuClassNames,
 	activeMenuItems,
 	toggleMenu,
+	onClick,
 }: MenuItemsProps) => {
 	const Tag: any = tag
 
@@ -62,26 +68,27 @@ const MenuItemWithChildren = ({
 	}
 	return (
 		<Tag
-			className={`${className} ${
-				activeMenuItems!.includes(item.key) ? 'active' : ''
-			}`}
-		>
-			<Link
-				to="/#"
-				onClick={toggleMenuItem}
-				data-menu-key={item.key}
-				className={`${linkClassName} ${
-					activeMenuItems!.includes(item.key) ? 'active' : ''
+			className={`${className} ${activeMenuItems!.includes(item.key) ? 'active' : ''
 				}`}
-				id={item.key}
-				role="button"
-				data-bs-toggle="dropdown"
-				aria-haspopup="true"
-				aria-expanded={open}
-			>
-				<i className={item.icon} />
-				{item.label}
-			</Link>
+		>
+			<div onClick={onClick}> {/* Add this line to handle the onClick for the dropdown */}
+
+				<Link
+					to="/#"
+					onClick={toggleMenuItem}
+					data-menu-key={item.key}
+					className={`${linkClassName} ${activeMenuItems!.includes(item.key) ? 'active' : ''
+						}`}
+					id={item.key}
+					role="button"
+					data-bs-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded={open}
+				>
+					<i className={item.icon} />
+					{item.label}
+				</Link>
+			</div>
 
 			<div
 				className={`${subMenuClassNames} ${showMenu ? 'show' : ''}`}
@@ -94,9 +101,8 @@ const MenuItemWithChildren = ({
 								<MenuItemWithChildren
 									item={child}
 									tag="div"
-									linkClassName={`dropdown-item ${
-										activeMenuItems!.includes(child.key) ? 'active' : ''
-									}`}
+									linkClassName={`dropdown-item ${activeMenuItems!.includes(child.key) ? 'active' : ''
+										}`}
 									activeMenuItems={activeMenuItems}
 									className="dropdown"
 									subMenuClassNames="dropdown-menu"
@@ -105,9 +111,8 @@ const MenuItemWithChildren = ({
 							) : (
 								<MenuItemLink
 									item={child}
-									className={`dropdown-item ${
-										activeMenuItems!.includes(child.key) ? 'active' : ''
-									}`}
+									className={`dropdown-item ${activeMenuItems!.includes(child.key) ? 'active' : ''
+										}`}
 								/>
 							)}
 						</React.Fragment>
@@ -127,6 +132,7 @@ const MenuItem = ({ item, className, linkClassName }: MenuItemsProps) => {
 }
 
 const MenuItemLink = ({ item }: MenuItemsProps) => {
+
 	return (
 		<Link
 			className="dropdown-item"
@@ -149,6 +155,9 @@ interface AppMenuProps {
 const AppMenu = ({ menuItems }: AppMenuProps) => {
 	const [topNavMenuItems] = useState<MenuItemTypes[]>(menuItems)
 	const [activeMenuItems, setActiveMenuItems] = useState<string[]>([])
+	const storedUserData = localStorage?.getItem("_FXCM_AUTH");
+	const parsedUserData = storedUserData ? JSON.parse(storedUserData) : null;
+	const [username] = useState(parsedUserData?.email || '');
 
 	let location = useLocation()
 	const menuRef = useRef(null)
@@ -199,6 +208,34 @@ const AppMenu = ({ menuItems }: AppMenuProps) => {
 		if (topNavMenuItems && topNavMenuItems.length > 0) activeMenu()
 	}, [activeMenu, topNavMenuItems])
 
+	const handleClick = () => {
+
+		let config = {
+			method: 'get',
+			maxBodyLength: Infinity,
+			url: `${url}/api/user/getRef/${username}`,
+			headers: {}
+		};
+
+		Axios(config)
+			.then(response => {
+				const reflinkUrl = `https://dashboard.fxcmholdings.com/register/${response?.data}`
+				console.log(reflinkUrl);
+				copyToClipboard(reflinkUrl);
+			})
+	};
+
+	const copyToClipboard = (text: string) => {
+		const textarea = document.createElement('textarea');
+		textarea.value = text;
+		document.body.appendChild(textarea);
+		textarea.select();
+		document.execCommand('copy');
+		document.body.removeChild(textarea);
+		alert("Đã copy reflink thành công");
+	  };
+	  
+
 	return (
 		<ul className="navbar-nav" ref={menuRef} id="main-side-menu">
 			{(topNavMenuItems || []).map((item, idx) => {
@@ -213,6 +250,7 @@ const AppMenu = ({ menuItems }: AppMenuProps) => {
 								activeMenuItems={activeMenuItems}
 								linkClassName="nav-link dropdown-toggle arrow-none"
 								toggleMenu={toggleMenu}
+								onClick={() => { handleClick() }}
 							/>
 						) : (
 							<MenuItem
