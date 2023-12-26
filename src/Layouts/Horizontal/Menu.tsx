@@ -72,7 +72,6 @@ const MenuItemWithChildren = ({
 				}`}
 		>
 			<div onClick={onClick}> {/* Add this line to handle the onClick for the dropdown */}
-
 				<Link
 					to="/#"
 					onClick={toggleMenuItem}
@@ -208,22 +207,24 @@ const AppMenu = ({ menuItems }: AppMenuProps) => {
 		if (topNavMenuItems && topNavMenuItems.length > 0) activeMenu()
 	}, [activeMenu, topNavMenuItems])
 
-	const handleClick = () => {
+	const handleClick = (item: MenuItemTypes) => {
+		// Handle the case where onClick is a function that takes a string argument
+		if (item.label === "Reflink") {
+			// Handle the case where onClick is a function that takes a string argument
+			let config = {
+				method: 'get',
+				maxBodyLength: Infinity,
+				url: `${url}/api/user/getRef/${username}`,
+				headers: {},
+			};
 
-		let config = {
-			method: 'get',
-			maxBodyLength: Infinity,
-			url: `${url}/api/user/getRef/${username}`,
-			headers: {}
-		};
-
-		Axios(config)
-			.then(response => {
-				const reflinkUrl = `https://dashboard.fxcmholdings.com/register/${response?.data}`
-				console.log(reflinkUrl);
+			Axios(config).then((response) => {
+				const reflinkUrl = `https://dashboard.fxcmholdings.com/register/${response?.data}`;
 				copyToClipboard(reflinkUrl);
-			})
+			});
+		}
 	};
+
 
 	const copyToClipboard = (text: string) => {
 		const textarea = document.createElement('textarea');
@@ -233,39 +234,38 @@ const AppMenu = ({ menuItems }: AppMenuProps) => {
 		document.execCommand('copy');
 		document.body.removeChild(textarea);
 		alert("Đã copy reflink thành công");
-	  };
-	  
+	};
+
 
 	return (
 		<ul className="navbar-nav" ref={menuRef} id="main-side-menu">
-			{(topNavMenuItems || []).map((item, idx) => {
-				return (
-					<React.Fragment key={idx}>
-						{item.children ? (
-							<MenuItemWithChildren
-								item={item}
-								tag="li"
-								className="nav-item dropdown"
-								subMenuClassNames="dropdown-menu"
-								activeMenuItems={activeMenuItems}
-								linkClassName="nav-link dropdown-toggle arrow-none"
-								toggleMenu={toggleMenu}
-								onClick={() => { handleClick() }}
-							/>
-						) : (
-							<MenuItem
-								item={item}
-								className={activeMenuItems.includes(item.key) ? 'active' : ''}
-								linkClassName={
-									activeMenuItems.includes(item.key) ? 'active' : ''
-								}
-							/>
-						)}
-					</React.Fragment>
-				)
-			})}
+		  {(topNavMenuItems || []).map((item, idx) => {
+			return (
+			  <React.Fragment key={idx}>
+				{item.children ? (
+				  <MenuItemWithChildren
+					item={item}
+					tag="li"
+					className="nav-item dropdown"
+					subMenuClassNames="dropdown-menu"
+					activeMenuItems={activeMenuItems}
+					linkClassName="nav-link dropdown-toggle arrow-none"
+					toggleMenu={toggleMenu}
+					onClick={() => handleClick(item)}
+				  />
+				) : (
+				  <MenuItem
+					item={item}
+					className={activeMenuItems.includes(item.key) ? 'active' : ''}
+					linkClassName={activeMenuItems.includes(item.key) ? 'active' : ''}
+				  />
+				)}
+			  </React.Fragment>
+			);
+		  })}
 		</ul>
-	)
+	  );
+	
 }
 
 export default AppMenu
