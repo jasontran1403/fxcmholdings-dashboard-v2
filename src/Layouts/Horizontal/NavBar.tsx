@@ -7,14 +7,14 @@ type NavbarProps = {
 };
 
 const NavBar = ({ isMenuOpened }: NavbarProps) => {
-
+  console.log(isMenuOpened);
   return (
     <div className="topnav">
       <Container fluid>
         <nav className="navbar navbar-expand-lg">
           <Collapse in={isMenuOpened}>
             <div className="collapse navbar-collapse" id="topnav-menu-content">
-              <AppMenu menuItems={getHorizontalMenuItems()} />
+              <AppMenu menuItems={getHorizontalMenuItems()}/>
             </div>
           </Collapse>
         </nav>

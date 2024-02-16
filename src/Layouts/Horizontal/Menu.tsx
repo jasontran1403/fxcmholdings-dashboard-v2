@@ -236,7 +236,6 @@ const AppMenu = ({ menuItems }: AppMenuProps) => {
 		alert("Đã copy reflink thành công");
 	};
 
-
 	return (
 		<ul className="navbar-nav" ref={menuRef} id="main-side-menu">
 		  {(topNavMenuItems || []).map((item, idx) => {
